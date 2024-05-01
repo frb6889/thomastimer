@@ -1,0 +1,17 @@
+@keyframes resize {
+    0% {
+        width: 100%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+img.resizable {
+    animation: resize 4s infinite;  /* 4 seconds for one full cycle, repeats infinitely */
+    transition: all 0.5s ease-in-out;  /* Smooth transition when resizing */
+}
+

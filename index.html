@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomasina's Timer</title>
+  <title>Thomasina's Shop</title>
   <link rel="icon" type="image/ico" href="./icon.png" />
 
   <style>
@@ -33,94 +33,22 @@
       /* box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4); */ /* Darker shadow on hover */
     }
 
-    #timer {
-      font-size: 32px; /* Increase font size */
-      font-family: 'Courier New', monospace; /* Retro font family */
-      color: #120d2e; /* Dark slate blue color */
-    }
-      
-
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-    #p2-img {
-      animation: rotate 60s linear infinite; /* Adjust speed as needed */
-    }
+   
   </style>
 </head>
 <body>
   <div style="position: relative;">
-    <button id="timing-button" class="bbutton" style="position: absolute; z-index: 4; left: 50%; transform: translateX(-50%);">
-      Start timing!
+    <button id="timing-button" class="bbutton" style="position: relative; z-index: 4; ">
+      <a href="./timer.html">Thomasina's Timer</a>
     </button>
-    <div id="timer-display" style="position: absolute; z-index: 4; left: 50%; transform: translateX(-50%);  display:none;justify-content: center; 
-    align-items: center;">
-      <p id="timer">00:00</p>
-      <button id="stop-button" style="margin-left: 16%;" class="bbutton">Stop</button>
-    </div>
-    <img src="./p1.png" style="width: 100%; position: absolute; z-index: 3;" alt="Image 1" />
-    <img id="p2-img" src="./p22.png" style="width: 100%; display: none; margin-top: 90px; position: absolute;  left: 0; z-index: 2;" alt="Image 2" />
-    <!-- <img id="p3-gif" src="./p3.gif" style="width: 100%; display: block; position: absolute; top: 0; left: 0; opacity: 1; z-index: 2;" alt="GIF Animation" />
-   -->
-   <img id="p3-gif" src="./p22.png" style="width: 100%; display: block; margin-top: 90px;position: absolute; left: 0; opacity: 1; z-index: 2;" alt="GIF Animation" />
-  
+    <button id="timing-button" class="bbutton" style="position: relative; z-index: 4; ">
+      <a href="./changepic.html">Welcome back to ______</a>
+    </button>
+    
   </div>
 
   <script>
-    window.onload = function() {
-      const button = document.getElementById("timing-button");
-      const timerDisplay = document.getElementById("timer-display");
-      const timerText = document.getElementById("timer");
-      const stopButton = document.getElementById("stop-button");
-      const img = document.querySelector("img");
-      const p2Img = document.getElementById("p2-img");
-      const p3Gif = document.getElementById("p3-gif");
-
-      let interval;
-      let seconds = 0;
-      
-      const setPosition = () => {
-        const imgWidth = img.clientWidth;
-        button.style.top = (imgWidth * 0.6) + "px";
-        timerDisplay.style.top = (imgWidth * 0.6) + "px";
-      };
-      
-      setPosition();
-      window.onresize = setPosition;
-      
-      button.addEventListener("click", () => {
-        timerDisplay.style.display = "block";
-        button.style.display = "none";
-        
-        p3Gif.style.display = "none";
-        p2Img.style.display = "block";
-        
-        interval = setInterval(() => {
-          seconds += 1;
-          const minutes = Math.floor(seconds / 60);
-          const remainingSeconds = seconds % 60;
-          
-          timerText.innerText = `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
-        }, 1000);
-      });
-
-      stopButton.addEventListener("click", () => {
-        clearInterval(interval);
-        seconds = 0;
-        timerText.innerText = "00:00";
-        timerDisplay.style.display = "none";
-        button.style.display = "block";
-        
-        p2Img.style.display = "none";
-        p3Gif.style.display = "block";
-      });
-    };
+    
   </script>
 </body>
 </html>

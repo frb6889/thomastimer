@@ -16,6 +16,7 @@
       background-color: aquamarine;
     }
     .bbutton {
+      color:black;
       margin-top:10px;
       background: linear-gradient(135deg, #f0f0f0 0%, #f0f0f0 100%); /* Cold tone gradient */
       border: 1px solid #141414; /* Blue border */
@@ -61,11 +62,14 @@
     <div id="timer-display" style="position: absolute; z-index: 4; left: 50%; transform: translateX(-50%);  display:none;justify-content: center; 
     align-items: center;">
       <p id="timer">00:00</p>
-      <button id="stop-button" class="bbutton">Stop</button>
+      <button id="stop-button" style="margin-left: 16%;" class="bbutton">Stop</button>
     </div>
     <img src="./p1.png" style="width: 100%; position: absolute; z-index: 3;" alt="Image 1" />
     <img id="p2-img" src="./p22.png" style="width: 100%; display: none; margin-top: 90px; position: absolute;  left: 0; z-index: 2;" alt="Image 2" />
-    <img id="p3-gif" src="./p3.gif" style="width: 100%; display: block; position: absolute; top: 0; left: 0; opacity: 1; z-index: 2;" alt="GIF Animation" />
+    <!-- <img id="p3-gif" src="./p3.gif" style="width: 100%; display: block; position: absolute; top: 0; left: 0; opacity: 1; z-index: 2;" alt="GIF Animation" />
+   -->
+   <img id="p3-gif" src="./p22.png" style="width: 100%; display: block; margin-top: 90px;position: absolute; left: 0; opacity: 1; z-index: 2;" alt="GIF Animation" />
+  
   </div>
 
   <script>
@@ -83,7 +87,7 @@
       
       const setPosition = () => {
         const imgWidth = img.clientWidth;
-        button.style.top = (imgWidth * 0.7) + "px";
+        button.style.top = (imgWidth * 0.6) + "px";
         timerDisplay.style.top = (imgWidth * 0.6) + "px";
       };
       
